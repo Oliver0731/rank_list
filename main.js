@@ -37,18 +37,33 @@ function btnClicked() {
 
 // FUNCTIONS TO DEFINE
 function drawRankList() {
+  for (let i = 0; i < rankList.length; i++) {
+    outputEl.innerHTML += `<p>${i + 1}: ${rankList[i]}</p>`;
+  }
+
   console.log("Draw rankList");
 }
 
 function addItem() {
+  outputEl.innerHTML = ``;
+
+  let add = prompt("Enter item");
+  rankList.push(add);
   console.log("Add Item");
 }
 
 function removeLast() {
+  outputEl.innerHTML = ``;
+
+  rankList.pop();
   console.log("Remove Last");
 }
 
 function insert() {
+  let add = prompt("Enter item");
+
+  let position = +prompt("enter what place to insert");
+  rankList.splice(position + 1, 0, add);
   console.log("Insert");
 }
 
