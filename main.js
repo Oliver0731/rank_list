@@ -60,19 +60,33 @@ function removeLast() {
 }
 
 function insert() {
+  outputEl.innerHTML = ``;
+
   let add = prompt("Enter item");
 
   let position = +prompt("enter what place to insert");
-  rankList.splice(position + 1, 0, add);
+  rankList.splice(position - 1, 0, add);
   console.log("Insert");
 }
 
 function removePos() {
+  outputEl.innerHTML = ``;
+
+  let position = +prompt("enter what place to remove");
+  rankList.splice(position - 1, 1);
   console.log("Remove at Position");
 }
 
 function move() {
+  outputEl.innerHTML = ``;
+
   console.log("Move");
+  let from = +prompt("enter what place to move from");
+  let to = +prompt("enter what place to move to");
+  let move = rankList.splice(from, 1)[0];
+  rankList.splice(to, 0, move);
+
+  console.log("to", to, "from", from);
 }
 
 function edit() {
